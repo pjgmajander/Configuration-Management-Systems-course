@@ -49,7 +49,7 @@ Yllä olevien komentojen lyhytmuotoinen selitys:
 3.	komento lisää uuden ohjelmistolähteen Salt Projectin paketeille APT:n lähdeluetteloon (/etc/apt/sources.list.d/salt.list), mikä mahdollistaa Salt Projectin ohjelmistojen asentamisen ja päivittämisen osaksi järjestelmää.
 
 # Tehtävä X) 
-## Tiivistelmä Tero Karvisen materiaaleista.
+Tiivistelmä Tero Karvisen materiaaleista.
 
 -Salt-komentoja voidaan suorittaa paikallisesti ilman Master-Minion -toteutusta. 
 -Salt-funktiot toimivat samalla tavalla sekä Windowsissa, että Linuxissa. 
@@ -60,10 +60,10 @@ Yllä olevien komentojen lyhytmuotoinen selitys:
 -Hyvä harjoitusraportti on mahdollisimman täsmällinen, helppolukuinen ja toistettava. Se sisältää myös lähdeviittauksia tiedolle.
 
 # Tehtävä a)
-## ”Asenna Debian 12-Bookworm virtuaalikoneeseen. (Poikkeuksellisesti tätä alakohtaa ei tarvitse raportoida, jos siinä ei ole mitään ongelmia…”
+”Asenna Debian 12-Bookworm virtuaalikoneeseen. (Poikkeuksellisesti tätä alakohtaa ei tarvitse raportoida, jos siinä ei ole mitään ongelmia…”
 
 # Tehtävä b)
-##Asenna Salt (salt-minion) Linuxille (uuteen virtuaalikoneeseesi).
+"Asenna Salt (salt-minion) Linuxille (uuteen virtuaalikoneeseesi)."
 
 Aloitin asentamalla salt-masterin komennolla sudo apt-get -y install salt-master (Karvinen 2018)
 ![kuva](https://github.com/user-attachments/assets/9c89d8c1-3c84-4f83-b268-8b09c66add31)
@@ -75,7 +75,7 @@ Varmistin Salt -asennusten onnistuneen komennolla sudo salt-call –version (Kar
 ![kuva](https://github.com/user-attachments/assets/7137c51a-dff7-4c39-b45c-344bfb955fdc)
 
 # Tehtävä c)	
-## Viisi tärkeintä. Näytä Linuxissa esimerkit viidestä tärkeimmästä Saltin tilafunktiosta: pkg, file, service, user, cmd. Analysoi ja selitä tulokset.
+Viisi tärkeintä. Näytä Linuxissa esimerkit viidestä tärkeimmästä Saltin tilafunktiosta: pkg, file, service, user, cmd. Analysoi ja selitä tulokset.
 
 Seuraavaksi kokeilin viittä erilaista toiminnallisuutta paikallisesti. Kaikkia komentoja yhdistävät osat ”salt-call” ja lippu ”- -local” mahdollistavat Saltin paikallisen suorittamisen. Suoritin komennot lähes täysin samalla tavalla kuin T. Karvisen materiaaleissa (Karvinen 2021).  
 
@@ -123,9 +123,11 @@ Oheisesta kuvakaappauksesta selviää, että komento onnistui.
 Seuraava kokeilemani komento oli “service”:
 Service komennolla voidaan hallita demoneja. Esimerkissä apache2 web-palvelin.
 $ sudo salt-call --local -l info state.single service.running apache2 enable=True
+
 ![kuva](https://github.com/user-attachments/assets/146510f5-9ad7-4e95-8a6f-2c50f87a4c86)
 
 $ sudo salt-call --local -l info state.single service.dead apache2 enable=False
+
 ![kuva](https://github.com/user-attachments/assets/c759286b-b4fa-403b-a5de-842cbd70e16c)
 
 Edeltävät komennot siis käynnistivät ja sammuttivat apache2 -palvelun.
@@ -153,11 +155,11 @@ Komennon suoritus onnistui.
 ![kuva](https://github.com/user-attachments/assets/27994600-ab04-4f05-baef-5dbd3d57bbb3)
 
 # Tehtävä d)	
-## Idempotentti. Anna esimerkki idempotenssista. Aja 'salt-call --local' komentoja, analysoi tulokset, selitä miten idempotenssi ilmenee.
+"Idempotentti. Anna esimerkki idempotenssista. Aja 'salt-call --local' komentoja, analysoi tulokset, selitä miten idempotenssi ilmenee."
 
 Useiden samanlaisten idempotenttien komentojen suorittaminen vaikuttaa palvelimen tilaan samalla tavalla, kuin ensimmäinen suoritettu komento. 
 Toisin sanoen Idempotentti komento vaikuttaa palvelimen tilaan vain kerran, eikä toistoilla ole merkitystä. 
-Matemaattisesti idempotenssi voidaan esittää konjunktiossa P ∧ P ≡ P ja disjunktiossa P ∨ P ≡ P. 
+Matemaattisesti idempotenssi voidaan esittää konjunktiossa P ∧ P ≡ P ja disjunktiossa P ∨ P ≡ P (Kärkkäinen 2003).
 Jos P vastaisi samaa asiaa kuin apache2-palvelimen asennus, tarkottaisi P ∧ P ≡ P sitä, että apache2-palvelimen asennus ja apache2-palvelimen asennus on sama kuin apache2-palvelimen asennus. 
 Toisin sanoen peräkkäiset asennukset eivät muuttaisi idempotentilla komennolla palvelimen tilaa mitenkään. 
 Vaikka apache2 asennettaisiin idempotentin komennon avulla 10 000 kertaa, olisi palvelimella silti vain yksi apache2-palvelin.
@@ -200,7 +202,11 @@ ja se todellakin toimi. Alfa -orja vastasi suorittamalla antamani käskyn.
 
 ## Lähteet
 Karvinen 2021: Run Salt Command Locally
+
 Karvinen 2018: Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux
+
 Karvinen 2006: Raportin kirjoittaminen
+
 T. Kärkkäinen, 2003, Jyväskylän yliopiston luentokalvot, Formaalit menetelmät – Propositiolaskennan kertausta, luettavissa: http://users.jyu.fi/~tka/opetus/kevat03/kalvo7.pdf. Luettu 30.10.2024. 
+
 VMware, Inc. 2024, SaltStack Salt Documentation (Release 3007.01), s. 2-5, luettavissa: https://docs.saltproject.io/en/pdf/Salt-master.pdf. Luettu: 29.10.2024. 
