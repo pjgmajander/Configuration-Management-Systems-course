@@ -167,8 +167,8 @@ Useiden samanlaisten idempotenttien komentojen suorittaminen vaikuttaa palvelime
 Toisin sanoen Idempotentti komento vaikuttaa palvelimen tilaan vain kerran, eikä toistoilla ole merkitystä. 
 Matemaattisesti idempotenssi voidaan esittää konjunktiossa P ∧ P ≡ P ja disjunktiossa P ∨ P ≡ P (Kärkkäinen 2003).
 Jos P vastaisi samaa asiaa kuin apache2-palvelimen asennus, tarkottaisi P ∧ P ≡ P sitä, että apache2-palvelimen asennus ja apache2-palvelimen asennus on sama kuin apache2-palvelimen asennus. 
-Toisin sanoen peräkkäiset asennukset eivät muuttaisi idempotentilla komennolla palvelimen tilaa mitenkään. 
-Vaikka apache2 asennettaisiin idempotentin komennon avulla 10 000 kertaa, olisi palvelimella silti vain yksi apache2-palvelin.
+Toisin sanoen peräkkäiset asennukset eivät muuttaisi idempotentilla komennolla laitteen tilaa mitenkään. 
+Vaikka apache2 asennettaisiin idempotentin komennon avulla 10 000 kertaa, olisi laitteella silti vain yksi apache2-palvelin.
 
 Hyvä esimerkki tästä on tämän harjoitustyön kohdassa c) suorittamani viimeinen komento:
 $ sudo salt-call --local -l info state.single cmd.run 'touch /tmp/temporaryitem' creates="/tmp/temporaryitem"
