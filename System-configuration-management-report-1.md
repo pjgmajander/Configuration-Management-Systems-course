@@ -51,12 +51,18 @@ Yllä olevien komentojen lyhytmuotoinen selitys:
 # Tehtävä X) 
 Tiivistelmä Tero Karvisen materiaaleista.
 
--Salt-komentoja voidaan suorittaa paikallisesti ilman Master-Minion -toteutusta. 
--Salt-funktiot toimivat samalla tavalla sekä Windowsissa, että Linuxissa. 
+-Salt-komentoja voidaan suorittaa paikallisesti ilman Master-Minion -toteutusta.
+
+-Salt-funktiot toimivat samalla tavalla sekä Windowsissa, että Linuxissa.
+
 -Tärkeitä mekanismeja ovat ’pkg’, ’file’, ’service’, ’user’ & ’cmd’.
+
 -Tyypillinen käyttötarkoitus Saltille on useiden laitteiden hallinta verkon yli yhden laitteen avulla.
+
 -Saltin avulla on mahdollista hallita tuhansia tietokoneita.
--Vain Master tarvitsee julkisen palvelimen ja tunnetun ip-osoitteen
+
+-Vain Master tarvitsee julkisen palvelimen ja tunnetun ip-osoitteen.
+
 -Hyvä harjoitusraportti on mahdollisimman täsmällinen, helppolukuinen ja toistettava. Se sisältää myös lähdeviittauksia tiedolle.
 
 # Tehtävä a)
