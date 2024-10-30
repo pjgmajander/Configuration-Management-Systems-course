@@ -146,7 +146,7 @@ Komento loi uuden käyttäjän nimellä nikolatesla963.
 
 ![kuva](https://github.com/user-attachments/assets/12e9309f-62a9-454c-902d-04036e96f527)
 
-Tämän jälkeen suoiritin komennon, joka poisti juuri luomani käyttäjän.
+Tämän jälkeen suoritin komennon, joka poisti juuri luomani käyttäjän.
 $ sudo salt-call --local -l info state.single user.absent nikolatesla963
 
 ![kuva](https://github.com/user-attachments/assets/27bf2703-8754-4a4c-842a-b8c12279ea9a)
@@ -179,7 +179,7 @@ Uutta kopiota tiedostosta ei luotu. Tämä on toteutettu komennossa ehtolauseell
 ![kuva](https://github.com/user-attachments/assets/c3f3104f-6159-47c3-9863-b7ae55a08eeb)
 
 # Tehtävä e)	
-## Herra-orja. Kokeile herra-orja arkkitehtuuria niin, että herra ja orja ovat samalla koneella.
+Herra-orja. Kokeile herra-orja arkkitehtuuria niin, että herra ja orja ovat samalla koneella.
 
 Tehtävä on käytännössä suoraa jatkoa tämän harjoitustyön tehtävälle b, jossa tarkoituksena oli asentaa salt-minion. 
 Saadakseni herra-orja -arkkitehtuurin toimimaan, muokkasin ensin ensin minion -tiedostoa: sudoedit /etc/salt/minion.
@@ -207,12 +207,12 @@ ja se todellakin toimi. Alfa -orja vastasi suorittamalla antamani käskyn.
 ![kuva](https://github.com/user-attachments/assets/d891e785-8063-4470-8970-a14c7868cf30)
 
 ## Lähteet
-Karvinen 2021: Run Salt Command Locally
+Karvinen, T. 2021. Run Salt Command Locally, luettavissa: https://terokarvinen.com/2021/salt-run-command-locally/
 
-Karvinen 2018: Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux
+Karvinen, T. 2018. Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux, luettavissa: https://terokarvinen.com/2018/03/28/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/
 
-Karvinen 2006: Raportin kirjoittaminen
+Karvinen, T. 2006. Raportin kirjoittaminen, luettavissa: https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/
 
-T. Kärkkäinen, 2003, Jyväskylän yliopiston luentokalvot, Formaalit menetelmät – Propositiolaskennan kertausta, luettavissa: http://users.jyu.fi/~tka/opetus/kevat03/kalvo7.pdf. Luettu 30.10.2024. 
+Kärkkäinen, T. 2003. Jyväskylän yliopiston luentokalvot, Formaalit menetelmät – Propositiolaskennan kertausta, luettavissa: http://users.jyu.fi/~tka/opetus/kevat03/kalvo7.pdf. Luettu 30.10.2024. 
 
-VMware, Inc. 2024, SaltStack Salt Documentation (Release 3007.01), s. 2-5, luettavissa: https://docs.saltproject.io/en/pdf/Salt-master.pdf. Luettu: 29.10.2024. 
+VMware, Inc. 2024. SaltStack Salt Documentation (Release 3007.01), s. 2-5, luettavissa: https://docs.saltproject.io/en/pdf/Salt-master.pdf. Luettu: 29.10.2024. 
