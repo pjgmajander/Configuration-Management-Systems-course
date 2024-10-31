@@ -27,9 +27,10 @@ Lisäsin tiedostoon käyttäjänimeni ja kopioin perään pääkäyttäjää kos
 ![kuva](https://github.com/user-attachments/assets/00c0e0ef-1b01-42cc-97fe-f5bb951664c3)
 
 Asensin UFW-palomuurin komennolla: 
-> sudo apt update && sudo apt install -y ufw
+`sudo apt update && sudo apt install -y ufw`
+
 ja avasin portit 4505 sekä 4506 Salt Stackia varten komennolla: 
-> `sudo ufw allow 4505/tcp && sudo ufw allow 4506/tcp`
+`sudo ufw allow 4505/tcp && sudo ufw allow 4506/tcp`
 
 ![kuva](https://github.com/user-attachments/assets/67e815d6-7a96-4803-b4bd-6a3c59311286)
 
