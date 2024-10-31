@@ -98,6 +98,7 @@ Tämä komento asentaa tree paketin.
 ![kuva](https://github.com/user-attachments/assets/c7174578-e2a8-4265-822e-64efa5eaf8bf)
 
 `$ sudo salt-call --local -l info state.single pkg.removed tree`
+
 Tämä komento kumosi edellisen. Tulosteen kohdassa ”Comment:” näkyy parhaiten merkittävä ero eli aiemmin asetettu paketti poistettiin.
 
 ![kuva](https://github.com/user-attachments/assets/396e2753-3f5e-4513-9666-82164edbd677)
