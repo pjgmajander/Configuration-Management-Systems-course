@@ -17,9 +17,13 @@ Asensin Debian 12.7.0 jakelun virtuaalikoneelleni Oracle VM VirtualBox manageris
 Annoin virtuaalikoneelleni 4 prosessoriydintä ja 4 096Mb RAM-muistia. 
 Dynaamisesti allokoitavaa levytilaa virtuaalikone sai 10,45Gb. 
 Harjoitus on toteutettu kannettavalla koneella.
+
 Malli: `Asus ZenBook UX325_UM325UA`
+
 Prosessori: `AMD64 Family 23 Model 104 Stepping 1 AuthenticAMD ~1801 Mhz`
+
 Prosessoriarkkitehtuuri: `x86-64`
+
 Käyttöjärjestelmä: `Microsoft Windows 11 Home`
 
 Annoin käyttäjälleni pääkäyttäjän oikeudet kirjautumalla ensin pääkäyttäjäksi.
