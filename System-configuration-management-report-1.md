@@ -204,7 +204,7 @@ Määrittelin tiedostoon Master -koneelle ip-osoitteen `127.0.0.1` sekä minion 
 ![kuva](https://github.com/user-attachments/assets/3cd5d87d-8db6-4acc-9b7a-afbf9caa5e51)
 
 Tämän jälkeen uudelleenkäynnistin palvelun
-`sydo systemctl restart salt.minion` 
+`sudo systemctl restart salt-minion.service` 
 ja tarkastelin hyväksyntää odottavat avaimet komennolla
 `sudo salt-key -L`
 
