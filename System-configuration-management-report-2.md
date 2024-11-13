@@ -65,7 +65,7 @@ Avattu vagrantfile komentorivin kautta notepadiin komennolla: `notepad Vagrantfi
 ![kuva](https://github.com/user-attachments/assets/4122f37b-bc2f-4e24-b49a-31b92dc748b3)
 
 Poistettu kaikki ylimääräinen teksti tiedostosta ja lisätty kaksi konetta staattisilla osotteilla. Määritelty koneille myös hostnamet "MASTER" ja "SLAVE".
-_(Selvitin soveltuvat staattiset osoitteet windows komentorivin `ipconfig` ja `ping` -toimintojen avulla)_
+_(Selvitin soveltuvat staattiset osoitteet Windows -komentorivin_ `ipconfig` _ja_ `ping` _-toimintojen avulla)_
 
 ![kuva](https://github.com/user-attachments/assets/0a860297-9f39-447e-9a4e-2cf463b7daf8)
 
