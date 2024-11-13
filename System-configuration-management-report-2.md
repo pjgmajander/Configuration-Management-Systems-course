@@ -177,15 +177,20 @@ Tiedoston ajaminen onnistui:
 # Tehtävä g) Tilafunktiot
 #### Tee sls-tiedosto, joka käyttää vähintään kahta eri tilafunktiota näistä: package, file, service, user. Tarkista eri ohjelmalla, että lopputulos on oikea. Osoita useammalla ajolla, että sls-tiedostosi on idempotentti.
 
-
+Muokkasin edellisissä tehtävissä käsittelemääni init.sls -tiedostoa.
+Määrittelin siihen neljä ohjetta:
+1. Luo /tmp/ -hakemistoon tiedosto "quux"
+2. Asenna Apache
+3. Tulosta komentoriviin viesti "hello world"
+4. Käynnistä Apache
 
 ![kuva](https://github.com/user-attachments/assets/0de8323f-1cd5-47f7-b762-af28f7974e15)
 
-vain 3 tilamuutosta, sillä Apache oli jo asennettu
+Kun ajoin tiedoston, se toimi odotetusti. Sain kuitenkin ilmoituksen vain kolmesta tilamuutoksesta, sillä Apache ilmeisesti käynnistyi automaattisesti asennuksen yhteydessä "The service apache2 is already running":
 
 ![kuva](https://github.com/user-attachments/assets/d3885150-3c1f-4c7f-bf8a-de15f47f60c2)
 
-Ajaessani komennon uudestaan 4 onnistui mutta vain 1 asia muuttui. 1 muuttunut asia oli komento hello world. Se on ainoa komento joka ei tallenna tietoa orjan konfiguraatioon. Tarkistin asian tulosteesta. Lukee, että apache2 service on jo käynnissä.  Tiedosto quux on jo olemassa ja apache2 on jo asennettu. Tämä osoittaa, että tilafunktiot 
+Ajaessani tiedoston uudestaan en saanut virheilmoituksia, mutta vain yksi tilamuutos ilmeni. Apache on jo asennettu ja käynnissä, ja tiedosto "quux" on jo luotu määriteltyyn hakemistoon. Vain komento `echo hello world` aiheutti tilamuutoksen, sillä se ei tallenna muutoksia SLAVE-koneen konfiguraatioon. Toisin sanoen 3/4 komennoista on idempotentteja; niiden toistaminen ei aiheuta tilamuutoksia:
 
 "/tmp/quux:
   file.managed",
@@ -201,7 +206,7 @@ Ajaessani komennon uudestaan 4 onnistui mutta vain 1 asia muuttui. 1 muuttunut a
     - name: apache2
     - enable: true"
     
-ovat idempotentteja.
+ovat idempotentteja kehotteita.
 
 ![kuva](https://github.com/user-attachments/assets/2f01abfd-61eb-4299-b523-70c61647c60b)
 
