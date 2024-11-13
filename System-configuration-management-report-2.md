@@ -65,7 +65,7 @@ Avattu vagrantfile komentorivin kautta notepadiin komennolla: `notepad Vagrantfi
 ![kuva](https://github.com/user-attachments/assets/4122f37b-bc2f-4e24-b49a-31b92dc748b3)
 
 Poistettu kaikki ylimääräinen teksti tiedostosta ja lisätty kaksi konetta staattisilla osotteilla. Määritelty koneille myös hostnamet "MASTER" ja "SLAVE".
-_(Selvitin soveltuvat staattiset osoitteet Windows -komentorivin_ `ipconfig` _ja_ `ping` _-toimintojen avulla)_
+_(Selvitin soveltuvat staattiset osoitteet Windows -komentorivin_ `ipconfig` _&_ `ping` _-toimintojen avulla)_
 
 ![kuva](https://github.com/user-attachments/assets/0a860297-9f39-447e-9a4e-2cf463b7daf8)
 
@@ -150,15 +150,19 @@ Tarkistettu herra-orja -konfiguraation toimivuus komennolla: `sudo salt '*' cmd.
 # Tehtävä e) Hei infrakoodi
 ##### Kokeile paikallisesti (esim 'sudo salt-call --local') infraa koodina. Kirjota sls-tiedosto, joka tekee esimerkkitiedoston /tmp/ -kansioon.
 
-Luotu tmp tiedosto
+Kokeiltu ensimmäiseksi Saltin paikallista suorittamista luomalla /tmp/ -hakemistoon "WHEA" -niminen tiedosto komennolla: `sudo salt-call --local state.single file.managed /tmp/WHEA`
 
 ![kuva](https://github.com/user-attachments/assets/436ec30c-550b-4e6f-a26c-1cd08b0778a6)
 
-sudo mkdir -p /srv/salt
-cd /srv/salt
-sudo mkdir trigger
-cd trigger/
-sudoedit init.sls
+Tämän jälkeen kirjoitin .sls -tiedoston, joka suorittaa saman toiminnon.
+Loin /srv/ -hakemistoon "salt" -nimisen kansion komennolla: `sudo mkdir -p /srv/salt`
+Siirryin juuri luomaani kansioon: `cd /srv/salt` ja loin sinne uuden "trigger" -nimisen moduulin komennolla: `sudo mkdir trigger`
+Seuraavaksi siirryin juuri luomaani moduuliin komennolla `cd trigger`
+Lisäsin moduuliin "init.sls" -tiedoston ja aloitin sen muokkaamisen komennolla: `sudoedit init.sls`
+
+Kirjoitin tiedostoon YAML-kielellä infraa koodina.
+Ensimmäinen osa "/tmp/WHEA" on tilan id (state id) ja toinen osa "file.managed" on tilafunktio (state function).
+Tiedosto siis ohjeistaa, että Salt huolehtii /tmp/ -hakemistossa sijaitsevan "WHEA" -tiedoston luomisesta, päivittämisestä tai poistamisesta lisäohjeistuksen mukaan. Jos tiedostoa ei ole, Salt luo tiedoston. Kokonaisuudessaan seuraava init.sls -tiedosto siis luo tiedoston, mikäli sitä ei ole. Ilman lisäohjeita se on idempotentti ohje.
 
 ![kuva](https://github.com/user-attachments/assets/55c48a4d-0173-4087-808f-5c72d0f7938f)
 
