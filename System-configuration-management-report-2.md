@@ -205,12 +205,13 @@ Muokattu aiemmin luodun trigger-moluudin nimeä, jotta se täsmäisi tehtäväna
 
 ![kuva](https://github.com/user-attachments/assets/7d264b7e-f327-4a2f-a9e4-216f9536d8fa)
 
-Luotu toinen moduuli ”apache” samaan hakemistopolkuun "/srv/salt/"
+Luotu toinen moduuli ”apache” samaan hakemistopolkuun "/srv/salt/".
+
 Muokattu "hello" -moduulin init.sls -tiedostoa seuraavasti:
 
 ![kuva](https://github.com/user-attachments/assets/f143a1a1-b8bd-4355-9830-f18eab8c0779)
 
-Muokattu "apache" -moduulin init.sls -tiedostoa seuraavasti:
+Luotu ja muokattu "apache" -moduulin init.sls -tiedostoa seuraavasti:
 
 ![kuva](https://github.com/user-attachments/assets/be57fcb8-ea8b-4394-8027-2bda0cceeae9)
 
