@@ -88,7 +88,8 @@ Ping-komennot onnistuivat eli virtuaalikoneet saavat yhteyden toisiinsa.
 
 Lisätietoja Saltista ja tarkemmat ohjeet sen asennuksesta löydät aiemmasta raportistani: https://github.com/pjgmajander/Configuration-Management-Systems-course/blob/main/System-configuration-management-report-1.md
 
-Aloitettu Saltin asennus, mutta ilmeni odottamaton ongelma. Virtuaalikoneeni ei saanut yhteyttä osoitteeseen repo.saltproject.io
+Aloitettu Saltin asennus, mutta ilmeni odottamaton ongelma: virtuaalikoneeni ei saanut yhteyttä osoitteeseen "repo.saltproject.io".
+
 Tarkistettu virtuaalikoneen yhteys internettiin pingaamalla osoitetta google.com. Yhteys muodostui.
 
 ![kuva](https://github.com/user-attachments/assets/b4b59128-1ad6-4e1c-94bf-f313db0ec4ab)
