@@ -169,10 +169,15 @@ Tiedosto siis ohjeistaa, että Salt huolehtii /tmp/ -hakemistossa sijaitsevan "W
 # Tehtävä f) Verkon yli
 #### Aja esimerkki sls-tiedostosi verkon yli orjalla.
 
+Suoritettu edellisessä tehtävässä luomani init.sls tiedosto verkon yli eli annettu MASTER-koneelta SLAVE-koneelle käsky toteuttaa tiedostossa määritetyt ohjeet komennolla: `sudo salt epsilon state.apply trigger`
+Tiedoston ajaminen onnistui:
+
 ![kuva](https://github.com/user-attachments/assets/4212ed1a-956e-49e5-9a44-5c214ee0b867)
 
 # Tehtävä g) Tilafunktiot
 #### Tee sls-tiedosto, joka käyttää vähintään kahta eri tilafunktiota näistä: package, file, service, user. Tarkista eri ohjelmalla, että lopputulos on oikea. Osoita useammalla ajolla, että sls-tiedostosi on idempotentti.
+
+
 
 ![kuva](https://github.com/user-attachments/assets/0de8323f-1cd5-47f7-b762-af28f7974e15)
 
