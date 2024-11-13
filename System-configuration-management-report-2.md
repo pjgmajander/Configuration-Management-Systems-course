@@ -22,10 +22,11 @@ Harjoitukset on toteutettu Vagrantin avulla luoduilla virtuaalikoneilla. Seuraav
 
 ![kuva](https://github.com/user-attachments/assets/ab71e721-e760-4cc0-a37a-da4f4233790d)
 
-Asennettu isäntäkoneelle Vagrant. 
-Asennuksen jälkeen uudelleenkäynnistetty kone
+Asennettu isäntäkoneelle Vagrant. Asennettavissa: https://developer.hashicorp.com/vagrant/install
 
-Tarkistettu vagrantin asentuminen:
+Asennuksen jälkeen uudelleenkäynnistetty kone.
+
+Tarkistettu vagrantin asentuminen komennolla 'vagrant --version'
 
 ![kuva](https://github.com/user-attachments/assets/b196e277-2927-4b0a-8cdb-d7d720c00b57)
 
@@ -33,7 +34,7 @@ Tarkistettu vagrantin asentuminen:
 # Tehtävä b)
 ##### "Linux Vagrant. Tee Vagrantilla uusi Linux-virtuaalikone."
 
-Luotu työpöydälle kansio “VagrantProject1”
+Luotu isäntäkoneen työpöydälle kansio nimellä “VagrantProject1”
 
 ![kuva](https://github.com/user-attachments/assets/e9201dde-98f8-44cf-bf6b-963c152476c5)
 
@@ -41,18 +42,18 @@ luotu uusi virtuaalikone komennolla 'vagrant init Debian/bookworm64'
 
 ![kuva](https://github.com/user-attachments/assets/eeca5704-b262-4126-a4d9-4c767646084f)
 
-Käynnistetty vagrant komennolla vagrant up
+Käynnistetty vagrant komennolla 'vagrant up'
 
 ![kuva](https://github.com/user-attachments/assets/34aac0b9-5e31-4c8f-9dac-c8f994c28d84)
 
-Yhdistetty koneeseen vagrant ssh ja suoritettu komento 'whoami'
+Yhdistetty koneeseen komennolla 'vagrant ssh' ja suoritettu komento 'whoami'
 
 ![kuva](https://github.com/user-attachments/assets/44964ef6-6ab8-4537-a7a7-abc08b194ae9)
 
-tarkistettu juuri asennetun koneen käyttöjärjestelmä komennolla 'cat'
+tarkistettu juuri asennetun koneen käyttöjärjestelmä komennolla 'cat/etc/os-release'
 ![kuva](https://github.com/user-attachments/assets/bd80dfdb-cb02-4627-8bda-7ff54433932f)
 
-kirjauduttu ulos virtuaalikoneelta ja pysäytetty vagrant
+kirjauduttu ulos virtuaalikoneelta komennolla 'exit' ja pysäytetty vagrant komennolla 'vagrant halt'
 
 ![kuva](https://github.com/user-attachments/assets/4eea8a1c-3db8-4fb3-aa42-d51f604475db)
 
@@ -60,27 +61,28 @@ kirjauduttu ulos virtuaalikoneelta ja pysäytetty vagrant
 # Tehtävä c)	
 ##### Kaksin kaunihimpi. Tee kahden Linux-tietokoneen verkko Vagrantilla. Osoita, että koneet voivat pingata toisiaan.
 
-Avattu vagrantfile komentorivin kautta notepadiin
+Avattu vagrantfile komentorivin kautta notepadiin:
 
 ![kuva](https://github.com/user-attachments/assets/4122f37b-bc2f-4e24-b49a-31b92dc748b3)
 
-Poistettu kaikki ylimääräinen teksti tiedostosta ja lisätty kaksi konetta staattisilla osotteilla. 
-Selvitin vapaat staattiset osoitteet windows komentorivin ipconfig- ja ping -toimintojen avulla. 
+Poistettu kaikki ylimääräinen teksti tiedostosta ja lisätty kaksi konetta staattisilla osotteilla. Määritelty koneille myös hostnamet "MASTER" ja "SLAVE".
+_(Selvitin soveltuvat staattiset osoitteet windows komentorivin 'ipconfig' ja 'ping' -toimintojen avulla)_
 
 ![kuva](https://github.com/user-attachments/assets/0a860297-9f39-447e-9a4e-2cf463b7daf8)
 
-Tämän jälkeen käynnistetty jälleen Vagrant
+Tämän jälkeen käynnistetty jälleen Vagrant:
 
 ![kuva](https://github.com/user-attachments/assets/08be56e2-5588-417b-a9db-b4f122810b5e)
 
-Kirjauduttu MASTERiin ja pingattu SLAVE
+Kirjauduttu MASTER-koneelle ja pingattu SLAVE-konetta:
 
 ![kuva](https://github.com/user-attachments/assets/401dce72-6b09-4c82-99a6-f746a4794b15)
 
-Huvin ja urheilun vuoksi kirjauduttu myös SLAVE ja pingattu MASTER
+Huvin ja urheilun vuoksi kirjauduttu myös SLAVE-koneelle ja pingattu MASTER-konetta:
 
 ![kuva](https://github.com/user-attachments/assets/ba823647-be5f-466e-af46-a94803295ac4)
 
+Ping-komennot onnistuivat eli virtuaalikoneet saavat yhteyden toisiinsa.
 
 # Tehtävä d)	
 ##### "Herra-orja verkossa. Demonstroi Salt herra-orja arkkitehtuurin toimintaa kahden Linux-koneen verkossa, jonka teit Vagrantilla. Asenna toiselle koneelle salt-master, toiselle salt-minion. Laita orjan /etc/salt/minion -tiedostoon masterin osoite. Hyväksy avain ja osoita, että herra voi komentaa orjakonetta."
