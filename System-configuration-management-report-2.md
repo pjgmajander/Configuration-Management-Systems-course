@@ -17,7 +17,7 @@ Käyttöjärjestelmä: `Microsoft Windows 11 Home`
 
 Harjoitukset on toteutettu Vagrantin avulla luoduilla virtuaalikoneilla. Seuraavassa kohdassa tietoa Vagrantin asentamisesta ja virtuaalikoneiden konfiguroinnista sekä käynnistämisestä.
 
-# Tehtävä a)
+# Tehtävä a) Hello Vagrant
 ##### ”Osoita jollain komennolla, että Vagrant on asennettu (esim tulostaa vagrantin versionumeron). Jos et ole vielä asentanut niitä, raportoi myös Vagrant ja VirtualBox asennukset. (Jos Vagrant ja VirtualBox on jo asennettu, niiden asennusta ei tarvitse tehdä eikä raportoida uudelleen.)”
 
 ![kuva](https://github.com/user-attachments/assets/ab71e721-e760-4cc0-a37a-da4f4233790d)
@@ -31,8 +31,8 @@ Tarkistettu Vagrantin asentuminen komennolla 'vagrant --version'
 ![kuva](https://github.com/user-attachments/assets/b196e277-2927-4b0a-8cdb-d7d720c00b57)
 
 
-# Tehtävä b)
-##### "Linux Vagrant. Tee Vagrantilla uusi Linux-virtuaalikone."
+# Tehtävä b) Linux Vagrant
+##### "Tee Vagrantilla uusi Linux-virtuaalikone."
 
 Luotu isäntäkoneen työpöydälle kansio nimellä “VagrantProject1”
 
@@ -58,8 +58,8 @@ Kirjauduttu ulos virtuaalikoneelta komennolla: 'exit' ja pysäytetty Vagrant kom
 ![kuva](https://github.com/user-attachments/assets/4eea8a1c-3db8-4fb3-aa42-d51f604475db)
 
 
-# Tehtävä c)	
-##### Kaksin kaunihimpi. Tee kahden Linux-tietokoneen verkko Vagrantilla. Osoita, että koneet voivat pingata toisiaan.
+# Tehtävä c) Kaksin kaunihimpi
+##### Tee kahden Linux-tietokoneen verkko Vagrantilla. Osoita, että koneet voivat pingata toisiaan.
 
 Avattu vagrantfile komentorivin kautta notepadiin:
 
@@ -84,8 +84,8 @@ Huvin ja urheilun vuoksi kirjauduttu myös SLAVE-koneelle ja pingattu MASTER-kon
 
 Ping-komennot onnistuivat eli virtuaalikoneet saavat yhteyden toisiinsa.
 
-# Tehtävä d)	
-##### "Herra-orja verkossa. Demonstroi Salt herra-orja arkkitehtuurin toimintaa kahden Linux-koneen verkossa, jonka teit Vagrantilla. Asenna toiselle koneelle salt-master, toiselle salt-minion. Laita orjan /etc/salt/minion -tiedostoon masterin osoite. Hyväksy avain ja osoita, että herra voi komentaa orjakonetta."
+# Tehtävä d) Herra-orja verkossa
+##### "Demonstroi Salt herra-orja arkkitehtuurin toimintaa kahden Linux-koneen verkossa, jonka teit Vagrantilla. Asenna toiselle koneelle salt-master, toiselle salt-minion. Laita orjan /etc/salt/minion -tiedostoon masterin osoite. Hyväksy avain ja osoita, että herra voi komentaa orjakonetta."
 
 Aloitettu Saltin asennus 
 
@@ -142,8 +142,8 @@ tarkistettu toimivuus
 
 
 
-# Tehtävä e)	
-##### Hei infrakoodi! Kokeile paikallisesti (esim 'sudo salt-call --local') infraa koodina. Kirjota sls-tiedosto, joka tekee esimerkkitiedoston /tmp/ -kansioon.
+# Tehtävä e) Hei infrakoodi
+##### Kokeile paikallisesti (esim 'sudo salt-call --local') infraa koodina. Kirjota sls-tiedosto, joka tekee esimerkkitiedoston /tmp/ -kansioon.
 
 Luotu tmp tiedosto
 
@@ -157,12 +157,12 @@ sudoedit init.sls
 
 ![kuva](https://github.com/user-attachments/assets/55c48a4d-0173-4087-808f-5c72d0f7938f)
 
-# Tehtävä f) 
+# Tehtävä f) Verkon yli
 #### Aja esimerkki sls-tiedostosi verkon yli orjalla.
 
 ![kuva](https://github.com/user-attachments/assets/4212ed1a-956e-49e5-9a44-5c214ee0b867)
 
-# Tehtävä g) 
+# Tehtävä g) Tilafunktiot
 #### Tee sls-tiedosto, joka käyttää vähintään kahta eri tilafunktiota näistä: package, file, service, user. Tarkista eri ohjelmalla, että lopputulos on oikea. Osoita useammalla ajolla, että sls-tiedostosi on idempotentti.
 
 ![kuva](https://github.com/user-attachments/assets/0de8323f-1cd5-47f7-b762-af28f7974e15)
@@ -195,8 +195,8 @@ ovat idempotentteja.
 
 
 
-# Tehtävä h) 
-#### Top file. Automatisoi vähintään kahden tilan / modulin ajaminen. Esim. komento 'sudo salt "*" state.apply' tai 'sudo salt-call --local state.apply' ajaa modulit "hello" ja "apache".
+# Tehtävä h) Top file
+#### Automatisoi vähintään kahden tilan / modulin ajaminen. Esim. komento 'sudo salt "*" state.apply' tai 'sudo salt-call --local state.apply' ajaa modulit "hello" ja "apache".
 
 Muokattu kansion nimeä tehtävää varten (trigger -> hello)
 
