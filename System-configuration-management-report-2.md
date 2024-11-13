@@ -87,55 +87,65 @@ Ping-komennot onnistuivat eli virtuaalikoneet saavat yhteyden toisiinsa.
 # Tehtävä d) Herra-orja verkossa
 ##### "Demonstroi Salt herra-orja arkkitehtuurin toimintaa kahden Linux-koneen verkossa, jonka teit Vagrantilla. Asenna toiselle koneelle salt-master, toiselle salt-minion. Laita orjan /etc/salt/minion -tiedostoon masterin osoite. Hyväksy avain ja osoita, että herra voi komentaa orjakonetta."
 
-Aloitettu Saltin asennus 
+Lisätietoja Saltista löydät aiemmasta raportistani: https://github.com/pjgmajander/Configuration-Management-Systems-course/blob/main/System-configuration-management-report-1.md
+
+
+Aloitettu Saltin asennus, mutta ilmeni odottamaton ongelma. Virtuaalikoneeni ei saanut yhteyttä osoitteeseen repo.saltproject.io
+Tarkistettu virtuaalikoneen yhteys internettiin pingaamalla osoitetta google.com. Yhteys muodostui.
 
 ![kuva](https://github.com/user-attachments/assets/b4b59128-1ad6-4e1c-94bf-f313db0ec4ab)
 
-Odottamaton ongelma, ei saatu yhteyttä repo.saltproject.io, tarkistettu virtuaalikoneen yhteys internettiin pingaamalla google.com.
-Tämän jälkeen kokeiltu isäntäkoneen selaimen kautta osoitetta, mutta yhteyttä ei saatu. 
-Navigoitu salt.io -sivuille https://docs.saltproject.io/salt/install-guide/en/latest/ ja havaittu seuraava ilmoitus.
+Kokeilin isäntäkoneella selaimen kautta osoitetta, mutta yhteyttä ei saatu:
+
+![kuva](https://github.com/user-attachments/assets/d5d85fb3-34dd-4637-82f3-85873f77ae7e)
+
+Navigoitu salt.io -sivuille https://docs.saltproject.io/salt/install-guide/en/latest/, ja havaittu seuraava ilmoitus:
 
 ![kuva](https://github.com/user-attachments/assets/a9ff1e18-1789-42e8-8b45-0c7104ae6f15)
 
-Toistettu komento uudella osoitteella, ja se toimi odotetusti. 
+Toistettu komento uudella osoitteella, ja se toimi odotetusti:
 
 ![kuva](https://github.com/user-attachments/assets/347e03b4-ac45-4ab7-b3bb-c0346d7e5a64)
 
+Varmistettu vielä asennuksen onnistuminen:
+
 ![kuva](https://github.com/user-attachments/assets/d3515d16-16f7-441e-879a-94e2cb8de7e3)
 
-Lisätty hakemistoon /etc/apt/preferences.d tiedosto nimeltä salt-pin-1001, joka sallii vain saltin long term supportin päivitykset. 
-Komento rajoittaa Salt-pakettien päivitykset vain 3006.x LTS (long term support) -versioihin, 
-estäen automaattiset päivitykset uusiin versioihin, jotka voisivat sisältää muutoksia tai uusia ominaisuuksia.
+Lisätty hakemistoon /etc/apt/preferences.d tiedosto nimeltä "salt-pin-1001", joka rajoittaa Salt-pakettien päivitykset vain 3006.x LTS (long term support) -versioihin. Tämä estää automaattiset päivitykset uusiin versioihin, jotka voisivat sisältää ei-toivottuja muutoksia tai uusia ominaisuuksia.
 
 ![kuva](https://github.com/user-attachments/assets/976020da-2410-462b-9f57-8225d2b88924)
 
-Päivitetty apt ja asennettu salt-master
+Päivitetty apt komennolla: 'sudo apt update' ja asennettu salt-master komennolla: 'sudo apt install salt-master'
 
 ![kuva](https://github.com/user-attachments/assets/5d2c5db4-0d1e-4381-93c0-75bc58447806)
 
+Uudelleenkäynnistetty ja aktivoitu Salt-master yhdistelmäkomennolla: 'sudo systemctl enable salt-master && sudo systemctl restart salt-master'
+
 ![kuva](https://github.com/user-attachments/assets/e1d975ac-1c56-4443-809d-dc130b8f1434)
 
-Varmistettu vielä asentuminen:
+Varmistettu vielä asentuminen komennolla: 'sudo salt-call --version'
 
 ![kuva](https://github.com/user-attachments/assets/cdf4c3be-4fa7-48d5-a016-9eb22322a29f)
 
-Toistettu slavella samat asiat, mutta asennettu salt-masterin sijaan salt-minion.
+Toistettu SLAVE-koneella tismalleen samat asiat, mutta asennettu Salt-masterin sijaan Salt-minion komennolla: 'sudo apt install salt-minion' + 'sudo systemctl enable salt-minion && sudo systemctl restart salt-minion'
+Varmistettu jälleen asentuminen: 'sudo salt-call --version'
 
 ![kuva](https://github.com/user-attachments/assets/641d67a0-d1f9-4535-80e6-ed8042a161ef)
 
-Muokattu sudoedit /etc/salt/minion:
+Muokattu SLAVE-koneella minionin konfiguraatiotiedostoa komennolla: 'sudoedit /etc/salt/minion'
+Lisätty konfiguraatiotiedostoon MASTER-koneen staattinen ip-osoite ja annettu SLAVE-koneelle minion-id "epsilon".
 
 ![kuva](https://github.com/user-attachments/assets/62e8ef48-1108-4821-afdb-31affaea61ed)
 
-tarkistettu hyväksyntää odottavat avaimet
+Tarkistettu MASTER-koneella hyväksyntää odottavat avaimet komennolla: 'sudo salt-key -L'
 
 ![kuva](https://github.com/user-attachments/assets/d7f90f1a-ce36-4ae6-9a38-a6e3ab4aba93)
 
-hyväksytty avaimet
+Hyväksytty avain komennolla: 'sudo salt-key -A -y' ja varmistettu avaimen onnistunut hyväksyntä toistamalla komento: 'sudo salt-key -L'
 
 ![kuva](https://github.com/user-attachments/assets/37d9e1bd-61f8-43cd-a6f3-e248bba4f02e)
 
-tarkistettu toimivuus
+Tarkistettu herra-orja -konfiguraation toimivuus komennolla: 'sudo salt '*' cmd.run 'hostname''
 
 ![kuva](https://github.com/user-attachments/assets/464a32ac-a824-4df0-aa68-04c455377696)
 
