@@ -15,7 +15,7 @@ Prosessoriarkkitehtuuri: `x86-64`
 
 Käyttöjärjestelmä: `Microsoft Windows 11 Home`
 
-Harjoitukset on toteutettu Vagrantin avulla luoduilla virtuaalikoneilla. Seuraavassa kohdassa tietoa Vagrantin asentamisesta ja virtuaalikoneiden konfiguroinnista sekö käynnistämisestä.
+Harjoitukset on toteutettu Vagrantin avulla luoduilla virtuaalikoneilla. Seuraavassa kohdassa tietoa Vagrantin asentamisesta ja virtuaalikoneiden konfiguroinnista sekä käynnistämisestä.
 
 # Tehtävä a)
 ##### ”Osoita jollain komennolla, että Vagrant on asennettu (esim tulostaa vagrantin versionumeron). Jos et ole vielä asentanut niitä, raportoi myös Vagrant ja VirtualBox asennukset. (Jos Vagrant ja VirtualBox on jo asennettu, niiden asennusta ei tarvitse tehdä eikä raportoida uudelleen.)”
@@ -26,7 +26,7 @@ Asennettu isäntäkoneelle Vagrant. Asennettavissa: https://developer.hashicorp.
 
 Asennuksen jälkeen uudelleenkäynnistetty kone.
 
-Tarkistettu vagrantin asentuminen komennolla 'vagrant --version'
+Tarkistettu Vagrantin asentuminen komennolla 'vagrant --version'
 
 ![kuva](https://github.com/user-attachments/assets/b196e277-2927-4b0a-8cdb-d7d720c00b57)
 
@@ -38,22 +38,22 @@ Luotu isäntäkoneen työpöydälle kansio nimellä “VagrantProject1”
 
 ![kuva](https://github.com/user-attachments/assets/e9201dde-98f8-44cf-bf6b-963c152476c5)
 
-luotu uusi virtuaalikone komennolla 'vagrant init Debian/bookworm64'
+Luotu uusi virtuaalikone komennolla: 'vagrant init Debian/bookworm64'
 
 ![kuva](https://github.com/user-attachments/assets/eeca5704-b262-4126-a4d9-4c767646084f)
 
-Käynnistetty vagrant komennolla 'vagrant up'
+Käynnistetty Vagrant komennolla: 'vagrant up'
 
 ![kuva](https://github.com/user-attachments/assets/34aac0b9-5e31-4c8f-9dac-c8f994c28d84)
 
-Yhdistetty koneeseen komennolla 'vagrant ssh' ja suoritettu komento 'whoami'
+Yhdistetty koneeseen komennolla: 'vagrant ssh' ja suoritettu komento: 'whoami'
 
 ![kuva](https://github.com/user-attachments/assets/44964ef6-6ab8-4537-a7a7-abc08b194ae9)
 
-tarkistettu juuri asennetun koneen käyttöjärjestelmä komennolla 'cat/etc/os-release'
+Tarkistettu juuri asennetun koneen käyttöjärjestelmä komennolla: 'cat/etc/os-release'
 ![kuva](https://github.com/user-attachments/assets/bd80dfdb-cb02-4627-8bda-7ff54433932f)
 
-kirjauduttu ulos virtuaalikoneelta komennolla 'exit' ja pysäytetty vagrant komennolla 'vagrant halt'
+Kirjauduttu ulos virtuaalikoneelta komennolla: 'exit' ja pysäytetty Vagrant komennolla: 'vagrant halt'
 
 ![kuva](https://github.com/user-attachments/assets/4eea8a1c-3db8-4fb3-aa42-d51f604475db)
 
