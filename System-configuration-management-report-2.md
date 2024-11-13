@@ -236,6 +236,8 @@ Ajettu verkon yli juuri luotu top.sls -tiedosto komennolla: `sudo salt epsilon s
 
 -top.sls -tiedoston avulla voidaan täsmentää, että mikä orja suorittaa minkäkin käskyn
 
+#### Tiivistelmä SaltStackin materiaaleista
+
 -YAML eli Yet another markup language
 
 -Käytössä Saltin konfiguraatiotiedoissa (.sls)
