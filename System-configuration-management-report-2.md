@@ -190,46 +190,32 @@ Kun ajoin tiedoston, se toimi odotetusti. Sain kuitenkin ilmoituksen vain kolmes
 
 ![kuva](https://github.com/user-attachments/assets/d3885150-3c1f-4c7f-bf8a-de15f47f60c2)
 
-Ajaessani tiedoston uudestaan en saanut virheilmoituksia, mutta vain yksi tilamuutos ilmeni. Apache on jo asennettu ja käynnissä, ja tiedosto "quux" on jo luotu määriteltyyn hakemistoon. Vain komento `echo hello world` aiheutti tilamuutoksen, sillä se ei tallenna muutoksia SLAVE-koneen konfiguraatioon. Toisin sanoen 3/4 komennoista on idempotentteja; niiden toistaminen ei aiheuta tilamuutoksia:
+Ajaessani tiedoston uudestaan en saanut virheilmoituksia, mutta vain yksi tilamuutos ilmeni. Apache on jo asennettu ja käynnissä, ja tiedosto "quux" on jo luotu määriteltyyn hakemistoon. Vain komento `echo hello world` aiheutti tilamuutoksen, sillä se ei tallenna muutoksia SLAVE-koneen konfiguraatioon. Toisin sanoen 3/4 komennoista on idempotentteja; niiden toistaminen ei aiheuta tilamuutoksia.
 
-"/tmp/quux:
-  file.managed",
-  
-"install_apache:
-  pkg.installed:
-    - name: apache2"
-
-    ja
-
-"apache:
-  service.running:
-    - name: apache2
-    - enable: true"
-    
-ovat idempotentteja kehotteita.
-
-![kuva](https://github.com/user-attachments/assets/2f01abfd-61eb-4299-b523-70c61647c60b)
-
+"quux" on jo olemassa, ja Apache on jo asennettu:
 ![kuva](https://github.com/user-attachments/assets/1eb5c550-3c3c-46f9-b9bd-f0b260e31e58)
 
-
+Apache on jo käynnissä, mutta komento `echo hello world` aiheutti tilamuutoksen:
+![kuva](https://github.com/user-attachments/assets/2f01abfd-61eb-4299-b523-70c61647c60b)
 
 # Tehtävä h) Top file
 #### Automatisoi vähintään kahden tilan / modulin ajaminen. Esim. komento 'sudo salt "*" state.apply' tai 'sudo salt-call --local state.apply' ajaa modulit "hello" ja "apache".
 
-Muokattu kansion nimeä tehtävää varten (trigger -> hello)
+Muokattu aiemmin luodun trigger-moluudin nimeä, jotta se täsmäisi tehtävänantoon komennolla: `sudo mv trigger hello`
 
-![kuva](https://github.com/user-attachments/assets/7d264b7e-f327-4a2f-a9e4-216f9536d8fa
+![kuva](https://github.com/user-attachments/assets/7d264b7e-f327-4a2f-a9e4-216f9536d8fa)
 
-Luotu toinen kansio ”apache”  hakemistoon /srv/salt/
-
+Luotu toinen moduuli ”apache” samaan hakemistopolkuun "/srv/salt/"
+Muokattu "hello" -moduulin init.sls -tiedostoa seuraavasti:
 ![kuva](https://github.com/user-attachments/assets/f143a1a1-b8bd-4355-9830-f18eab8c0779)
 
+Muokattu "apache" -moduulin init.sls -tiedostoa seuraavasti:
 ![kuva](https://github.com/user-attachments/assets/be57fcb8-ea8b-4394-8027-2bda0cceeae9)
 
+Lisätty hakemistopolkuun "/srv/salt/" tiedosto "top.sls", ja muokattu sitä seuraavasti:
 ![kuva](https://github.com/user-attachments/assets/65c8ac40-4f99-47c3-a7b9-f584e34ad0b0)
 
-suoritettu top.sls ja molemmat modulit toimivat
+Ajettu verkon yli juuri luotu top.sls -tiedosto komennolla: `sudo salt epsilon state.apply` ja SLAVE-kone suoritti tiedoston mukaisesti molemmat moduulit.
 
 ![kuva](https://github.com/user-attachments/assets/1171d530-8631-4693-95ca-107920946528)
 
@@ -259,7 +245,6 @@ suoritettu top.sls ja molemmat modulit toimivat
 -Perustuu avain-arvo -pareihin
 
 -Tiedot voidaan tallentaa listoiksi ja sanakirjoiksi
-
 
 ## Lähteet
 
