@@ -207,12 +207,15 @@ Muokattu aiemmin luodun trigger-moluudin nimeä, jotta se täsmäisi tehtäväna
 
 Luotu toinen moduuli ”apache” samaan hakemistopolkuun "/srv/salt/"
 Muokattu "hello" -moduulin init.sls -tiedostoa seuraavasti:
+
 ![kuva](https://github.com/user-attachments/assets/f143a1a1-b8bd-4355-9830-f18eab8c0779)
 
 Muokattu "apache" -moduulin init.sls -tiedostoa seuraavasti:
+
 ![kuva](https://github.com/user-attachments/assets/be57fcb8-ea8b-4394-8027-2bda0cceeae9)
 
 Lisätty hakemistopolkuun "/srv/salt/" tiedosto "top.sls", ja muokattu sitä seuraavasti:
+
 ![kuva](https://github.com/user-attachments/assets/65c8ac40-4f99-47c3-a7b9-f584e34ad0b0)
 
 Ajettu verkon yli juuri luotu top.sls -tiedosto komennolla: `sudo salt epsilon state.apply` ja SLAVE-kone suoritti tiedoston mukaisesti molemmat moduulit.
