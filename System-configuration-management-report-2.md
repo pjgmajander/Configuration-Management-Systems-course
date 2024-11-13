@@ -224,7 +224,7 @@ Ajettu verkon yli juuri luotu top.sls -tiedosto komennolla: `sudo salt epsilon s
 
 -Vagrant luo virtuaalikoneita ja automatisoi SSH-kirjautumisen
 
--Ei graafista käyttöliittymää
+-Vagrant-koneissa ei ole graafista käyttöliittymää
 
 -Tyypillinen käyttötarkoitus Saltille on useiden laitteiden hallinta verkon yli yhden laitteen avulla.
 
