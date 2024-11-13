@@ -26,10 +26,9 @@ Asennettu isäntäkoneelle Vagrant. Asennettavissa: https://developer.hashicorp.
 
 Asennuksen jälkeen uudelleenkäynnistetty kone.
 
-Tarkistettu Vagrantin asentuminen komennolla 'vagrant --version'
+Tarkistettu Vagrantin asentuminen komennolla `vagrant --version`
 
 ![kuva](https://github.com/user-attachments/assets/b196e277-2927-4b0a-8cdb-d7d720c00b57)
-
 
 # Tehtävä b) Linux Vagrant
 ##### "Tee Vagrantilla uusi Linux-virtuaalikone."
@@ -38,22 +37,22 @@ Luotu isäntäkoneen työpöydälle kansio nimellä “VagrantProject1”
 
 ![kuva](https://github.com/user-attachments/assets/e9201dde-98f8-44cf-bf6b-963c152476c5)
 
-Luotu uusi virtuaalikone komennolla: 'vagrant init Debian/bookworm64'
+Luotu uusi virtuaalikone komennolla: `vagrant init Debian/bookworm64`
 
 ![kuva](https://github.com/user-attachments/assets/eeca5704-b262-4126-a4d9-4c767646084f)
 
-Käynnistetty Vagrant komennolla: 'vagrant up'
+Käynnistetty Vagrant komennolla: `vagrant up`
 
 ![kuva](https://github.com/user-attachments/assets/34aac0b9-5e31-4c8f-9dac-c8f994c28d84)
 
-Yhdistetty koneeseen komennolla: 'vagrant ssh' ja suoritettu komento: 'whoami'
+Yhdistetty koneeseen komennolla: `vagrant ssh` ja suoritettu komento: `whoami`
 
 ![kuva](https://github.com/user-attachments/assets/44964ef6-6ab8-4537-a7a7-abc08b194ae9)
 
-Tarkistettu juuri asennetun koneen käyttöjärjestelmä komennolla: 'cat/etc/os-release'
+Tarkistettu juuri asennetun koneen käyttöjärjestelmä komennolla: `cat/etc/os-release`
 ![kuva](https://github.com/user-attachments/assets/bd80dfdb-cb02-4627-8bda-7ff54433932f)
 
-Kirjauduttu ulos virtuaalikoneelta komennolla: 'exit' ja pysäytetty Vagrant komennolla: 'vagrant halt'
+Kirjauduttu ulos virtuaalikoneelta komennolla: `exit` ja pysäytetty Vagrant komennolla: `vagrant halt`
 
 ![kuva](https://github.com/user-attachments/assets/4eea8a1c-3db8-4fb3-aa42-d51f604475db)
 
@@ -61,12 +60,12 @@ Kirjauduttu ulos virtuaalikoneelta komennolla: 'exit' ja pysäytetty Vagrant kom
 # Tehtävä c) Kaksin kaunihimpi
 ##### Tee kahden Linux-tietokoneen verkko Vagrantilla. Osoita, että koneet voivat pingata toisiaan.
 
-Avattu vagrantfile komentorivin kautta notepadiin:
+Avattu vagrantfile komentorivin kautta notepadiin komennolla: `notepad Vagrantfile`
 
 ![kuva](https://github.com/user-attachments/assets/4122f37b-bc2f-4e24-b49a-31b92dc748b3)
 
 Poistettu kaikki ylimääräinen teksti tiedostosta ja lisätty kaksi konetta staattisilla osotteilla. Määritelty koneille myös hostnamet "MASTER" ja "SLAVE".
-_(Selvitin soveltuvat staattiset osoitteet windows komentorivin 'ipconfig' ja 'ping' -toimintojen avulla)_
+_(Selvitin soveltuvat staattiset osoitteet windows komentorivin `ipconfig` ja `ping` -toimintojen avulla)_
 
 ![kuva](https://github.com/user-attachments/assets/0a860297-9f39-447e-9a4e-2cf463b7daf8)
 
@@ -87,8 +86,7 @@ Ping-komennot onnistuivat eli virtuaalikoneet saavat yhteyden toisiinsa.
 # Tehtävä d) Herra-orja verkossa
 ##### "Demonstroi Salt herra-orja arkkitehtuurin toimintaa kahden Linux-koneen verkossa, jonka teit Vagrantilla. Asenna toiselle koneelle salt-master, toiselle salt-minion. Laita orjan /etc/salt/minion -tiedostoon masterin osoite. Hyväksy avain ja osoita, että herra voi komentaa orjakonetta."
 
-Lisätietoja Saltista löydät aiemmasta raportistani: https://github.com/pjgmajander/Configuration-Management-Systems-course/blob/main/System-configuration-management-report-1.md
-
+Lisätietoja Saltista ja tarkemmat ohjeet sen asennuksesta löydät aiemmasta raportistani: https://github.com/pjgmajander/Configuration-Management-Systems-course/blob/main/System-configuration-management-report-1.md
 
 Aloitettu Saltin asennus, mutta ilmeni odottamaton ongelma. Virtuaalikoneeni ei saanut yhteyttä osoitteeseen repo.saltproject.io
 Tarkistettu virtuaalikoneen yhteys internettiin pingaamalla osoitetta google.com. Yhteys muodostui.
@@ -115,42 +113,39 @@ Lisätty hakemistoon /etc/apt/preferences.d tiedosto nimeltä "salt-pin-1001", j
 
 ![kuva](https://github.com/user-attachments/assets/976020da-2410-462b-9f57-8225d2b88924)
 
-Päivitetty apt komennolla: 'sudo apt update' ja asennettu salt-master komennolla: 'sudo apt install salt-master'
+Päivitetty apt komennolla: `sudo apt update` ja asennettu salt-master komennolla: `sudo apt install salt-master`
 
 ![kuva](https://github.com/user-attachments/assets/5d2c5db4-0d1e-4381-93c0-75bc58447806)
 
-Uudelleenkäynnistetty ja aktivoitu Salt-master yhdistelmäkomennolla: 'sudo systemctl enable salt-master && sudo systemctl restart salt-master'
+Uudelleenkäynnistetty ja aktivoitu Salt-master yhdistelmäkomennolla: `sudo systemctl enable salt-master && sudo systemctl restart salt-master`
 
 ![kuva](https://github.com/user-attachments/assets/e1d975ac-1c56-4443-809d-dc130b8f1434)
 
-Varmistettu vielä asentuminen komennolla: 'sudo salt-call --version'
+Varmistettu vielä asentuminen komennolla: `sudo salt-call --version`
 
 ![kuva](https://github.com/user-attachments/assets/cdf4c3be-4fa7-48d5-a016-9eb22322a29f)
 
-Toistettu SLAVE-koneella tismalleen samat asiat, mutta asennettu Salt-masterin sijaan Salt-minion komennolla: 'sudo apt install salt-minion' + 'sudo systemctl enable salt-minion && sudo systemctl restart salt-minion'
-Varmistettu jälleen asentuminen: 'sudo salt-call --version'
+Toistettu SLAVE-koneella tismalleen samat asiat, mutta asennettu Salt-masterin sijaan Salt-minion komennolla: `sudo apt install salt-minion` + `sudo systemctl enable salt-minion && sudo systemctl restart salt-minion`
+Varmistettu jälleen asentuminen: `sudo salt-call --version`
 
 ![kuva](https://github.com/user-attachments/assets/641d67a0-d1f9-4535-80e6-ed8042a161ef)
 
-Muokattu SLAVE-koneella minionin konfiguraatiotiedostoa komennolla: 'sudoedit /etc/salt/minion'
+Muokattu SLAVE-koneella minionin konfiguraatiotiedostoa komennolla: `sudoedit /etc/salt/minion`
 Lisätty konfiguraatiotiedostoon MASTER-koneen staattinen ip-osoite ja annettu SLAVE-koneelle minion-id "epsilon".
 
 ![kuva](https://github.com/user-attachments/assets/62e8ef48-1108-4821-afdb-31affaea61ed)
 
-Tarkistettu MASTER-koneella hyväksyntää odottavat avaimet komennolla: 'sudo salt-key -L'
+Tarkistettu MASTER-koneella hyväksyntää odottavat avaimet komennolla: `sudo salt-key -L`
 
 ![kuva](https://github.com/user-attachments/assets/d7f90f1a-ce36-4ae6-9a38-a6e3ab4aba93)
 
-Hyväksytty avain komennolla: 'sudo salt-key -A -y' ja varmistettu avaimen onnistunut hyväksyntä toistamalla komento: 'sudo salt-key -L'
+Hyväksytty avain komennolla: `sudo salt-key -A -y` ja varmistettu avaimen onnistunut hyväksyntä toistamalla komento: `sudo salt-key -L`
 
 ![kuva](https://github.com/user-attachments/assets/37d9e1bd-61f8-43cd-a6f3-e248bba4f02e)
 
-Tarkistettu herra-orja -konfiguraation toimivuus komennolla: 'sudo salt '*' cmd.run 'hostname''
+Tarkistettu herra-orja -konfiguraation toimivuus komennolla: `sudo salt '*' cmd.run 'hostname'`
 
 ![kuva](https://github.com/user-attachments/assets/464a32ac-a824-4df0-aa68-04c455377696)
-
-
-
 
 # Tehtävä e) Hei infrakoodi
 ##### Kokeile paikallisesti (esim 'sudo salt-call --local') infraa koodina. Kirjota sls-tiedosto, joka tekee esimerkkitiedoston /tmp/ -kansioon.
