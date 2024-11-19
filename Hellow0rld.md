@@ -1,5 +1,0 @@
-# Terve
-
-## maailma
-
-joo-o
