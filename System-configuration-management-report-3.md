@@ -91,7 +91,6 @@ Nyt oli aika tarkistaa, että toimiko suunnitelmani. Siirryin isäntäkoneelle j
 
 ![kuva](https://github.com/user-attachments/assets/a09c9aa7-634e-4a87-98d8-911ebf65a6bb)
 
-
 # Tehtävä b) Linux Vagrant
 ### "Lisää uusi portti, jossa SSHd kuuntelee."
 
@@ -123,15 +122,10 @@ Varmistettu kuitenkin, että portti kuuntelee. Saatu positiivinen tulos:
 
 ![kuva](https://github.com/user-attachments/assets/afd98e3b-63cc-4cac-9b08-ea2b84e3cf5e)
 
-
-
-
-
-
-
 # Tehtävä c) Oma moduli
 ### Valitse aihe omalle modulille.
 
+Pyrin toteuttamaan variaation Cookie Clicker -pelistä web-palvelimella.
 
 # Tehtävä d) VirtualHost
 ### "Asenna Apache tarjoilemaan weppisivua. Weppisivun tulee näkyä palvelimen etusivulla (localhost). HTML:n tulee olla jonkun käyttäjän kotihakemistossa, ja olla muokattavissa normaalin käyttäjän oikeuksin, ilman sudoa."
