@@ -91,7 +91,7 @@ Nyt oli aika tarkistaa, että toimiko suunnitelmani. Siirryin isäntäkoneelle j
 
 ![kuva](https://github.com/user-attachments/assets/a09c9aa7-634e-4a87-98d8-911ebf65a6bb)
 
-# Tehtävä b) Linux Vagrant
+# Tehtävä b) SSH
 ### "Lisää uusi portti, jossa SSHd kuuntelee."
 
 Asennettu ensin manuaalisesti ssh MASTER-koneelle:
