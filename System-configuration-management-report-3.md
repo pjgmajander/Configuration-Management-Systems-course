@@ -95,6 +95,39 @@ Nyt oli aika tarkistaa, että toimiko suunnitelmani. Siirryin isäntäkoneelle j
 # Tehtävä b) Linux Vagrant
 ### "Lisää uusi portti, jossa SSHd kuuntelee."
 
+Asennettu ensin manuaalisesti ssh MASTER-koneelle:
+
+![kuva](https://github.com/user-attachments/assets/88d6d433-05a5-47ec-9f77-ad3c493e10cf)
+
+Muokattu ssh-demonin konfiguraatiotiedostoa "sshd_config":
+
+![kuva](https://github.com/user-attachments/assets/77c21622-a85d-41b1-bbe2-180b0d2eb142)
+
+Lisätty portit 22 sekä 8888
+
+![kuva](https://github.com/user-attachments/assets/40e5557c-97c9-43a1-8eed-1c87dacc858b)
+
+Uudelleenkäynnistetty ssh ja kokeiltu kirjautua komennolla ssh
+
+![kuva](https://github.com/user-attachments/assets/57303a9f-0d8b-49d8-9fa5-0818cfadabee)
+
+Avattu portti 8888 ssh-yhteyksille:
+
+![kuva](https://github.com/user-attachments/assets/f4fa5bd9-5634-42e7-a67d-66bf966e1377)
+
+Pyritty kirjautumaan tuloksetta:
+
+![kuva](https://github.com/user-attachments/assets/8bfeea10-01df-4e64-a585-1e490bdc866c)
+
+Varmistettu kuitenkin, että portti kuuntelee. Saatu positiivinen tulos:
+
+![kuva](https://github.com/user-attachments/assets/afd98e3b-63cc-4cac-9b08-ea2b84e3cf5e)
+
+
+
+
+
+
 
 # Tehtävä c) Oma moduli
 ### Valitse aihe omalle modulille.
