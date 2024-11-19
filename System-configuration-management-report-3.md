@@ -122,6 +122,33 @@ Varmistettu kuitenkin, että portti kuuntelee. Saatu positiivinen tulos:
 
 ![kuva](https://github.com/user-attachments/assets/afd98e3b-63cc-4cac-9b08-ea2b84e3cf5e)
 
+Siirrytty automatisoimaan edeltävä asetelma.
+Ensin päivitetty sshd_config -tiedostoon uusi porttikonfiguraatio:
+
+![kuva](https://github.com/user-attachments/assets/4db5a410-08da-454a-994d-33de6c4e39dd)
+
+Avattu kyseinen portti SLAVE-koneella:
+
+![kuva](https://github.com/user-attachments/assets/64a597bf-459a-482a-b3ac-568baf7d7902)
+
+Luotu /srv/salt/files/sshdconf/ polku, ja kopioitu siihen juuri muokattu sshd_config -tiedosto:
+
+´sudo cp /etc/ssh/sshd_config /srv/salt/files/sshdconf/´
+
+Tämän jälkeen luotu uusi ssh-moduuli, ja lisätty siihen .sls -tiedosto:
+
+![kuva](https://github.com/user-attachments/assets/b44bf761-2252-46f8-a13c-8e724e3ed280)
+
+![kuva](https://github.com/user-attachments/assets/99b21eb8-fa13-43b9-b5d6-5dbc9fe45c00)
+
+Suoritettu ssh-moduuli SLAVE-koneella Saltin avulla:
+
+![kuva](https://github.com/user-attachments/assets/589824e6-a251-4b63-a003-69eb35bbf3c2)
+
+Varmistettu, että portti aukesi kuuntelemaan ssh-yhteyksiä (+ havainnollistava esimerkki eli esim. portti 5558 ei ole auki automaattisesti):
+
+![kuva](https://github.com/user-attachments/assets/b454ca0a-ccc1-4c99-b711-73c538cb3378)
+
 # Tehtävä c) Oma moduli
 ### Valitse aihe omalle modulille.
 
