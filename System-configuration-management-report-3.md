@@ -159,8 +159,11 @@ Pyrin toteuttamaan variaation Cookie Clicker -pelistä web-palvelimella.
 
 # Tehtävä x)
 ### Tiivistelmä Tero Karvisen materiaaleista
+- Package-file-servicen avulla voidaan automatisoida demonien asennukset ja konfiguraatiotietojen määrittely
 
 ### Tiivistelmä SaltStackin materiaaleista
+
+- Sls-tiedostojen avulla voidaan hallinnoida ja automatisoida palveluiden asennuksia sekä toimintamalleja
 
 ## Lähteet
 
