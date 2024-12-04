@@ -21,7 +21,7 @@ Harjoitukset on toteutettu Vagrantin avulla luoduilla virtuaalikoneilla. Seuraav
 ### "Tee oma miniprojektisi valmiiksi."
 
 Projektini tarkoitus on automatisoida yksinkertaisen pelipalvelimen rakentaminen ja käynnistäminen. Kirjoitin usean YAML-konfiguraatiotiedoston, jotka suoritan SaltStackin avulla. Loin viisi moduulia, jotka orja-kone ajaa samanaikaisesti top.sls -tiedoston määrittelyn mukaisesti. Lopputuloksena on infrastruktuuria koodina, jossa vaihtamalla kansion "srv/salt/files/html/nindex/" sisältöä, voidaan käynnistää automaattisesti uusia variaatioita pelipalvelimesta. 
-
+Varsinaisen lopputuloksen (ohjelmoimani pelin) esittelen vain kurssin jäsenille eksklusiivisessa live-demonstraatiossa.
 
 ## Ensimmäinen moduuli
 #### APTupdate
