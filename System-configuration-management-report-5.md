@@ -50,6 +50,29 @@ enable_apache:
       - pkg: install_apache
 
 ## Kolmas moduuli
+#### A2CONF
+
+Tämä moduuli käskee orjakoneen muokata apachen konfiguraatiotiedostoa, jotta viides moduuli mahdollistetaan. Muutos käyttää lähteenä käsin kirjoitettua konfiguraatiotiedostoa, joka on siirretty polkuun /srv/salt/files/apacheconf/. Konfiguraatiotiedostoon tehty seuraava muutos, joka koskee hakemistoa /var/www/: "AllowOverride All". Tämä mahdollistaa .htaccess -tiedoston käyttämisen kyseisessä hakemistossa. 
+
+apache2_config:
+  file.managed:
+    - name: /etc/apache2/apache2.conf
+    - source: salt://files/apacheconf/apache2.conf
+    - user: root
+    - group: root
+    - mode: 644
+    - require:
+      - pkg: install_apache
+
+apache2_service:
+  service.running:
+    - name: apache2
+    - enable: True
+    - require:
+      - file: apache2_config
+
+
+## Neljäs moduuli
 #### UFW
 
 Tämä moduuli avaa portteja ufw-palomuurissa tarpeen mukaan.
@@ -75,32 +98,10 @@ open_port_https:
     - require:
       - cmd: enable_ufw
 
-## Neljäs moduuli
-#### A2CONF
-
-Tämä moduuli käskee orjakooneen muokata apachen konfiguraatiotiedostoa, jotta viides moduuli mahdollistetaan. Muutos käyttää lähteenä käsin kirjoitettua konfiguraatiotiedostoa, joka on siirretty polkuun /srv/salt/files/apacheconf/. Konfiguraatiotiedostoon tehty seuraava muutos, joka koskee hakemistoa /var/www/: "AllowOverride All". Tämä mahdollistaa .htaccess -tiedoston käyttämisen kyseisessä hakemistossa. 
-
-apache2_config:
-  file.managed:
-    - name: /etc/apache2/apache2.conf
-    - source: salt://files/apacheconf/apache2.conf
-    - user: root
-    - group: root
-    - mode: 644
-    - require:
-      - pkg: install_apache
-
-apache2_service:
-  service.running:
-    - name: apache2
-    - enable: True
-    - require:
-      - file: apache2_config
-
 ## Viides moduuli
 #### NINDEX
 
-Tämä moduuli vaihtaa apache2:n oletussivun ja uudelleenkäynnistää apachen, jotta muutos astuisi voimaan. Uuden sivun lähteeksi on määritelty kansion /files/html/nindex/ sisältö. Kansioon on lisätty .htaccess -tiedosto, joka määrittää mitä sivua käyttäjälle näytetään kun hän muodostaa yhteyden apache-palvelimeen. Ilman moduulissa 4 tehtyä muutosta apachen konfiguraatiotiedosto, .htaccess ei vaikuttaisi mitenkään. 
+Tämä moduuli vaihtaa apache2:n oletussivun ja uudelleenkäynnistää apachen, jotta muutos astuisi voimaan. Uuden sivun lähteeksi on määritelty kansion /files/html/nindex/ sisältö. Kansioon on lisätty .htaccess -tiedosto, joka määrittää mitä sivua käyttäjälle näytetään kun hän muodostaa yhteyden apache-palvelimeen. Ilman kolmannessa moduulissa tehtyä muutosta apachen konfiguraatiotiedostoon, .htaccess ei vaikuttaisi mitenkään. 
 
 ![kuva](https://github.com/user-attachments/assets/dc14819e-cf23-4c42-a3d0-8e13ac35b975)
 
@@ -123,4 +124,4 @@ base:
     - A2install
     - A2conf
     - ufw
-    - HHclicker
+    - Nindex
