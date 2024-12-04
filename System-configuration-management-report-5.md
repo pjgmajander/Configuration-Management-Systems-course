@@ -68,7 +68,7 @@ open_port_https:
 
 #### A2CONF
 
-apache2_config:
+`apache2_config:
   file.managed:
     - name: /etc/apache2/apache2.conf
     - source: salt://files/apacheconf/apache2.conf
@@ -76,7 +76,7 @@ apache2_config:
     - group: root
     - mode: 644
     - require:
-      - pkg: install_apache
+      - pkg: install_apache`
 
 
 apache2_service:
