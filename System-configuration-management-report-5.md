@@ -15,7 +15,7 @@ Prosessoriarkkitehtuuri: `x86-64`
 
 Käyttöjärjestelmä: `Microsoft Windows 11 Home`
 
-Harjoitukset on toteutettu Vagrantin avulla luoduilla virtuaalikoneilla. Seuraavassa kohdassa tietoa Vagrantin asentamisesta ja virtuaalikoneiden konfiguroinnista sekä käynnistämisestä.
+Harjoitukset on toteutettu Vagrantin avulla luoduilla virtuaalikoneilla. Lisätietoa löydät aiemmista raporteistani.
 
 # Tehtävä a) Oma miniprojekti.
 ### "Tee oma miniprojektisi valmiiksi."
