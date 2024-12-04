@@ -20,8 +20,7 @@ Harjoitukset on toteutettu Vagrantin avulla luoduilla virtuaalikoneilla. Seuraav
 # Tehtävä a) Oma miniprojekti.
 ### "Tee oma miniprojektisi valmiiksi."
 
-Projektini tarkoitus on automatisoida pelipalvelin. Kirjoitin usean YAML-konfiguraatiotiedoston, jotka suoritan SaltStackin avulla. 
-Loin viisi moduulia, jotka orja-kone ajaa samanaikaisesti top.sls -tiedoston määrittelyn mukaisesti. 
+Projektini tarkoitus on automatisoida yksinkertaisen pelipalvelimen rakentaminen ja käynnistäminen. Kirjoitin usean YAML-konfiguraatiotiedoston, jotka suoritan SaltStackin avulla. Loin viisi moduulia, jotka orja-kone ajaa samanaikaisesti top.sls -tiedoston määrittelyn mukaisesti. Lopputuloksena on infrastruktuuria koodina, jossa vaihtamalla kansion "srv/salt/files/html/nindex/" sisältöä, voidaan käynnistää automaattisesti uusia variaatioita pelipalvelimesta. 
 
 
 ## Ensimmäinen moduuli
@@ -101,7 +100,8 @@ open_port_https:
 ## Viides moduuli
 #### NINDEX
 
-Tämä moduuli vaihtaa apache2:n oletussivun ja uudelleenkäynnistää apachen, jotta muutos astuisi voimaan. Uuden sivun lähteeksi on määritelty kansion /files/html/nindex/ sisältö. Kansioon on lisätty .htaccess -tiedosto, joka määrittää mitä sivua käyttäjälle näytetään kun hän muodostaa yhteyden apache-palvelimeen. Ilman kolmannessa moduulissa tehtyä muutosta apachen konfiguraatiotiedostoon, .htaccess ei vaikuttaisi mitenkään. 
+Tämä moduuli vaihtaa apache2:n oletussivun ja uudelleenkäynnistää apachen, jotta muutos astuisi voimaan. Uuden sivun lähteeksi on määritelty kansion srv/salt/files/html/nindex/ sisältö. 
+Olen lisännyt kansioon ohjelmoimani variaation Cookie Clicker -pelistä. Kansio sisältää niin projektin graafisen käyttöliittymän html- ja css-tiedostoina, valokuvia sekä javascript-tiedoston. Kansioon on lisätty myös ".htaccess" -tiedosto, joka määrittää mitä sivua käyttäjälle näytetään kun hän muodostaa yhteyden apache-palvelimeen. Ilman kolmannessa moduulissa tehtyä muutosta apachen konfiguraatiotiedostoon, .htaccess ei vaikuttaisi mitenkään. 
 
 ![kuva](https://github.com/user-attachments/assets/dc14819e-cf23-4c42-a3d0-8e13ac35b975)
 
