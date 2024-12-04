@@ -114,3 +114,13 @@ copy_html_files:
 restart_apache:
   cmd.run:
     - name: systemctl restart apache2
+
+## TOP.SLS
+
+base:
+  'epsilon':
+    - APTupdate
+    - A2install
+    - A2conf
+    - ufw
+    - HHclicker
